@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모멘텀</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="javascript/clock.js" defer></script>
+    <script src="javascript/greeting.js" defer></script>
+    <script src="javascript/todo.js" defer></script>
+    <script src="javascript/bg.js" defer></script>
+    <script src="javascript/weather.js" defer></script>
+  </head>
+  <body>
+    <div class="js-clock">
+      <h1>00:00</h1>
+    </div>
+    <!-- form인 이유: enter로 제출하기 위해서 -->
+    <h4 class="js-greetings greetings"></h4>
+    <form class="js-form form">
+      <input type="text" placeholder="What is your name?" />
+    </form>
+
+    <form class="js-toDoForm">
+      <input type="text" placeholder="Wirte a to do" />
+    </form>
+
+    <ul class="js-toDoList"></ul>
+    <span class="js-weather"></span>
+  </body>
+</html>
