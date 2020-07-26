@@ -51,7 +51,6 @@ function handleColorClick(event) {
   // console.log(event);
   // console.log(event.target);
   // console.log(event.target.style.backgroundColor);
-
   Array.from(colors).forEach((color) => {
     color.classList.remove("selectedColor");
   });
