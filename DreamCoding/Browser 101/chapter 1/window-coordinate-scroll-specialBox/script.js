@@ -7,11 +7,14 @@ const scrollBy = document.querySelector(".scroll-by"),
   scrollInto = document.querySelector(".scroll-into");
 
 function consolePrintBoxXY(event) {
+  // clicked box 색상 변경
   const arrayBoxes = Array.from(boxes);
   arrayBoxes.forEach((box) => {
     box.classList.remove("clicked");
   });
   event.target.classList.add("clicked");
+
+  // clicked box 위치 콘솔출력
   const clickedBox = document.querySelector(".clicked");
   const boxRect = clickedBox.getBoundingClientRect();
   console.log(`top: ${boxRect.top}, left: ${boxRect.left}`);

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .btn_find {
+        margin: 30px;
+        padding: 10px;
+        font-size: 30px;
+        border-radius: 0.5em;
+        outline: none;
+        border: 0;
+        background-color: tomato;
+        color: white;
+        cursor: pointer;
+      }
+      .btn_find:active {
+        transform: scale(0.95);
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+      }
+      .carrot {
+        margin: 5px;
+        display: block;
+        width: 100px;
+        height: 100px;
+      }
+      .rabbit {
+        margin: 5px;
+        display: block;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn_find">Find a rabbit</button>
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/rabbit.png" alt="" class="rabbit" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+      <img src="img/carrot.png" alt="" class="carrot" />
+    </div>
+    <script>
+      const rabbit = document.querySelector(".rabbit");
+      const btn_find = document.querySelector(".btn_find");
+
+      function handleClick(event) {
+        rabbit.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      btn_find.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>
