@@ -48,8 +48,8 @@ function handleFtbtn(event) {
 
 function middle_click(event) {
   if (event.target.nodeName === "BUTTON") {
+    // data.id 추가해서 딱 삭제버튼에서만 동작할 수 있도록 하자
     // 이벤트 위임
-    console.log("delete button clicked");
     event.target.parentElement.remove();
   }
 }
