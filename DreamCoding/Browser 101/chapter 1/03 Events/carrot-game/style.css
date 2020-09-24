@@ -8,6 +8,7 @@ body {
   background-image: url("img/background.png");
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
+  /* background: url(img/background.png) center/cover; */
 }
 .menu-container {
   height: 50vh;

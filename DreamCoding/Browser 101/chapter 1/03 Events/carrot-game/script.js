@@ -11,6 +11,12 @@ const popup_retry = document.querySelector(".popup__retry");
 const ground_container = document.querySelector(".ground_container");
 const count = document.querySelector(".count");
 
+const carrotSound = new Audio("./sound/carrot_pull.mp3");
+const bugSound = new Audio("./sound/bug_pull.mp3");
+const bgSound = new Audio("./sound/bg.mp3");
+const alertSound = new Audio("./sound/alert.wav");
+const winSound = new Audio("./sound/game_win.mp3");
+
 let timer_count;
 let timer_playing = false;
 let count_carrot = 0;
@@ -95,6 +101,8 @@ function game_start() {
   count.innerHTML = ``;
   timer_start();
   create_ground();
+  bgSound.currentTime = 0;
+  bgSound.play();
 }
 
 function game_stop() {
@@ -107,6 +115,7 @@ function game_stop() {
 
 function game_clear() {
   game_stop();
+  winSound.play();
   popup.children[1].innerHTML = "Great!";
   timer.innerHTML = `Clear`;
 }
@@ -115,12 +124,13 @@ function catch_things(event) {
   if (event.target.classList[1] === "carrot") {
     count_carrot++;
     count.innerHTML = `${count_carrot}`;
-
+    carrotSound.play();
     event.target.remove();
 
     if (count_carrot === clear_carrot_num) game_clear();
   }
   if (event.target.classList[1] === "bug") {
+    bugSound.play();
     game_stop();
   }
 }
@@ -128,3 +138,4 @@ function catch_things(event) {
 btn_play_stop.addEventListener("click", timer_func);
 popup_retry.addEventListener("click", timer_func);
 ground_container.addEventListener("click", catch_things);
+bgSound.play();
